@@ -12,7 +12,7 @@ The objective of this task was to configure and test basic firewall rules to all
   ### Step 1
   ''' sudo apt install ufw '''
   This command installs the UFW (Uncomplicated Firewall) package on a Linux system. UFW is a user-friendly command-line tool for managing firewall rules, making it easier to configure          iptables without complex syntax.
-  - image1.jpg
+  - image1.jpeg
   - 
   ### Step 2
   ''' sudo ufw enable
@@ -20,19 +20,19 @@ The objective of this task was to configure and test basic firewall rules to all
   This step activates the UFW firewall and then verifies its status.
   sudo ufw enable turns on the firewall and ensures it starts automatically at boot.
   sudo ufw status confirms whether the firewall is active and lists any existing rules. If no rules are configured yet, it will show “Status: active” with no entries.
-  - image2.jpg
+  - image2.jpeg
     
  ### Step 3
  ''' sudo ufw allow 22/tcp
      sudo ufw deny 23/tcp '''
  sudo ufw allow 22/tcp opens port 22 to allow SSH traffic, enabling secure remote connections.
  sudo ufw deny 23/tcp blocks inbound traffic on port 23, which is commonly used by the insecure Telnet protocol, enhancing system security by preventing Telnet access.    
- - image3.jpg
+ - image3.jpeg
 
  ### Step 4
  ''' sudo ufw status verbose '''
  This command displays detailed information about the firewall’s current status, including all active rules with their specific ports, protocols, and whether they are allowed or denied. It    helps confirm that the rules to allow SSH (port 22) and block Telnet (port 23) are correctly applied.
- - image4.jpg
+ - image4.jpeg
 
  ### Step 5
  ''' telnet localhost 23 '''
@@ -42,17 +42,17 @@ The objective of this task was to configure and test basic firewall rules to all
  ### Step 6
  ''' sudo ufw delete 2 '''
  Deleted the firewall rule numbered 2, which was blocking inbound traffic on port 23 (Telnet). This step restores the firewall to its original state by removing the test rule.
- - image6.jpg
+ - image6.jpeg
    
  ### Step 7
  ''' sudo ufw delete 3 '''
  Deleted the firewall rule numbered 3, which was allowing inbound SSH traffic on port 22. This step was performed to fully restore the firewall to its initial configuration.
- - image7.jpg
+ - image7.jpeg
    
  ### Step 8
  ''' sudo ufw status verbose '''
  Checked the detailed firewall status again to ensure all test rules (blocking port 23 and allowing port 22) were removed and that the firewall returned to its original state.
- - image8.jpg
+ - image8.jpeg
 
 
 ## Conclusion
